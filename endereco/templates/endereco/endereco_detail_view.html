@@ -8,5 +8,6 @@
 <p>{{ object.municipio }}</p>
 
 <a class="btn btn-primary btn-md active" href="{% url 'endereco:endereco_delete' endereco.pk %}" role="button">Excluir</a>
+<a class="btn btn-primary btn-md active" href="{% url 'endereco:endereco_update' endereco.pk %}" role="button">Atualizar</a>
 
 {% endblock 'main' %}

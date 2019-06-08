@@ -3,6 +3,7 @@
 {% block 'main' %}
 
 <form method="post">{% csrf_token %}
+    <h1>Deletar contato</h1>
     <hr class="my-5">
     <p>Are you sure you want to delete "{{ object }}"?</p>
     <input type="submit" value="Confirm">

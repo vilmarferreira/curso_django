@@ -6,4 +6,7 @@ class Endereco(models.Model):
     estado = models.CharField(max_length=30, null=True, blank=False)
     municipio = models.CharField(max_length=30, null=True, blank=False)
 
+    def __str__(self):
+        return '{}-{}'.format(self.logradouro, self.bairro)
+
 # Create your models here.

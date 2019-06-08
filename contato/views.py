@@ -18,7 +18,10 @@ class ContatoCreateView(CreateView):
 class ContatoUpdateView(UpdateView):
     model = Contato
     template_name = 'contato/contato_update_view.html'
+    form_class = ContatoForm
 
+    def get_success_url(self):
+        return reverse_lazy('contato:contato_list')
 
 class ContatoDetailView(DetailView):
     model = Contato

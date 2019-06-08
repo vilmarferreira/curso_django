@@ -6,5 +6,6 @@
 <p>{{ object.endereco }}</p>
 
 <a class="btn btn-primary btn-md active" href="{% url 'pessoa:pessoa_delete' pessoa.pk %}" role="button">Excluir</a>
+<a class="btn btn-primary btn-md active" href="{% url 'pessoa:pessoa_update' pessoa.pk %}" role="button">Atualizar</a>
 
 {% endblock 'main' %}

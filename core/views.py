@@ -22,6 +22,10 @@ class PessoaCreateView(CreateView):
 class PessoaUpdateView(UpdateView):
     model = Pessoa
     template_name = 'core/pessoa_update_view.html'
+    form_class = PessoaForm
+
+    def get_success_url(self):
+        return reverse_lazy('core:pessoa_list')
 
 
 class PessoaDetailView(DetailView):

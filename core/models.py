@@ -8,5 +8,7 @@ class Pessoa(models.Model):
     endereco = models.ForeignKey(Endereco, on_delete=models.PROTECT)
     contato = models.ForeignKey(Contato,on_delete=models.PROTECT)
 
+    def __str__(self):
+        return '{}-{}-{}'.format(self.nome, self.endereco.logradouro, self.contato.telefone_1)
 
 # Create your models here.

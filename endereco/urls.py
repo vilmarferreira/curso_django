@@ -1,6 +1,7 @@
 from django.urls import path
 
-from endereco.views import EnderecoCreateView, EnderecoListView, EnderecoDetailView, EnderecoDeleteView
+from endereco.views import EnderecoCreateView, EnderecoListView, EnderecoDetailView, EnderecoDeleteView, \
+    EnderecoUpdateView
 
 app_name = 'endereco'
 
@@ -9,4 +10,5 @@ urlpatterns = [
     path('list/', EnderecoListView.as_view(), name='endereco_list'),
     path('detail/<int:pk>', EnderecoDetailView.as_view(), name='endereco_detail'),
     path('delete/<int:pk>', EnderecoDeleteView.as_view(), name='endereco_delete'),
+    path('update/<int:pk>', EnderecoUpdateView.as_view(), name='endereco_update'),
 ]
