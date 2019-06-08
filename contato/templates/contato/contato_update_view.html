@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block 'main' %}
+
+  <hr class="my-5">
+  <div class="form-group">
+    <form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
+</form>
+  </div>
+
+
+
+{% endblock 'main' %}
+
+

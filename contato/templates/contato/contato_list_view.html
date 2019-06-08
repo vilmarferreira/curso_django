@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+
+{% block 'main' %}
+<h1>Articles</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Telefone 1</th>
+      <th scope="col">Telefone 2</th>
+      <th scope="col">Email</th>
+      <th scope="col">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for contato in object_list %}
+    <tr>
+
+      <td>{{contato.telefone_1}}</td>
+      <td>{{contato.telefone_2}}</td>
+      <td>{{contato.email}}</td>
+        <td><a class="btn btn-primary btn-md active" href="{% url 'contato:contato_detail' contato.pk %}" role="button">Detalhes</a></td>
+
+    </tr>
+  {% endfor %}
+  </tbody>
+
+
+{% endblock 'main' %}

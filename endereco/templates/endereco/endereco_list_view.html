@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+
+{% block 'main' %}
+<h1>Articles</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Logradouro</th>
+      <th scope="col">Bairro</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Cidade</th>
+      <th scope="col">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for endereco in object_list %}
+    <tr>
+
+      <td>{{endereco.logradouro}}</td>
+      <td>{{endereco.bairro}}</td>
+      <td>{{endereco.estado}}</td>
+      <td>{{endereco.municipio}}</td>
+      <td><a class="btn btn-primary btn-md active" href="{% url 'endereco:endereco_detail' endereco.pk %}" role="button">Detalhes</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+
+
+{% endblock 'main' %}

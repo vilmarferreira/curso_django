@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+{% block 'main' %}
+<hr class="my-5">
+<p>{{ object.nome }}</p>
+<p>{{ object.contato }}</p>
+<p>{{ object.endereco }}</p>
+
+<a class="btn btn-primary btn-md active" href="{% url 'pessoa:pessoa_delete' pessoa.pk %}" role="button">Excluir</a>
+
+{% endblock 'main' %}

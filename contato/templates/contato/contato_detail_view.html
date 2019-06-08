@@ -1,0 +1,11 @@
+{% extends 'core/base.html' %}
+{% block 'main' %}
+
+<h1>Contato</h1>
+<p>{{ object.telefone_1 }}</p>
+<p>{{ object.telefone_2 }}</p>
+<p>{{ object.email }}</p>
+
+<a class="btn btn-primary btn-md active" href="{% url 'contato:contato_delete' contato.pk %}" role="button">Excluir</a>
+
+{% endblock 'main' %}

@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+
+{% block 'main' %}
+<h1>Articles</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Endereço</th>
+      <th scope="col">Contato</th>
+      <th scope="col">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for pessoa in object_list %}
+    <tr>
+
+      <td>{{pessoa.nome}}</td>
+      <td>{{pessoa.endereco}}</td>
+      <td>{{pessoa.contato}}</td>
+        <td><a class="btn btn-primary btn-md active" href="{% url 'pessoa:pessoa_detail' pessoa.pk %}" role="button">Detalhes</a></td>
+
+    </tr>
+  {% endfor %}
+  </tbody>
+
+
+{% endblock 'main' %}
