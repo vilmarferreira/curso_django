@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
-
+from .routers_api import router
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls', namespace='index')),
     path('pessoa/', include('core.urls', namespace='pessoa')),
     path('contato/', include('contato.urls', namespace='contato')),
-    path('endereco/', include('endereco.urls', namespace='endereco'))
+    path('endereco/', include('endereco.urls', namespace='endereco')),
+    path('api/',include(router.get_urls()))
 
 ]
